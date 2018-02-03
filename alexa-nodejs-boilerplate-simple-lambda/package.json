@@ -1,0 +1,10 @@
+{
+    "name": "alexa-nodejs-boilerplate-lambda",
+    "version": "1.0.0",
+    "main": "handler.js",
+    "dependencies": {
+        "bluebird": "^3.5.1",
+        "jsonschema": "^1.2.2"
+    },
+    "devDependencies": {}
+}
