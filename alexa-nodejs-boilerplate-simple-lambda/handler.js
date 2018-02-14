@@ -26,7 +26,7 @@ module.exports.handler = (event, context, callback) => {
     console.log(`Event: [${JSON.stringify(event)}]`);
     var dataStore = new DataStore();
     dataStore.userData = event.session.user;
-    dataStore.attributes = event.session.attributes || {};
+    dataStore.sessionData = event.session.attributes || {};
     try {
         if (event.session.application.applicationId !== APPLICATION_ID) {
             console.log(`Invoking with un-identified application id [Application Id: ${event.session.application.applicationId}]`);
