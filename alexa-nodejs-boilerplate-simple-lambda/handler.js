@@ -16,7 +16,7 @@ var responseBuilder = (dataStore) => {
     }
     var response = {
         version: "1.0",
-        sessionAttributes: JSON.parse(JSON.stringify(dataStore.attributes)),
+        sessionAttributes: JSON.parse(JSON.stringify(dataStore.sessionData)),
         response: JSON.parse(JSON.stringify(dataStore.response))
     };
     console.log(`Response: [${JSON.stringify(response)}]`);
