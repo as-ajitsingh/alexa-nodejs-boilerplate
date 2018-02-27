@@ -8,10 +8,10 @@ var intentMatcher = dataStore => {
             return defaultLaunch(dataStore);
         case "default.sessionended":
             return defaultSessionEnded(dataStore);
-        case "amazon.stopintent":
-            return amazonStopIntent(dataStore);
-        case "amazon.cancelintent":
-            return amazonCancelIntent(dataStore);
+        case "AMAZON.StopIntent":
+            return AMAZONStopIntent(dataStore);
+        case "AMAZON.CancelIntent":
+            return AmazonCancelIntent(dataStore);
         default:
             return noIntentMatch(dataStore);
     }
@@ -37,7 +37,7 @@ var defaultSessionEnded = function(dataStore) {
         resolve(dataStore);
     });
 };
-var amazonStopIntent = function(dataStore) {
+var AMAZONStopIntent = function(dataStore) {
     return new Promise((resolve, reject) => {
         var responseBuilder = new ResponseBuilder();
         dataStore.response = responseBuilder.addSpeech({
@@ -47,7 +47,7 @@ var amazonStopIntent = function(dataStore) {
         resolve(dataStore);
     });
 };
-var amazonCancelIntent = function(dataStore) {
+var AmazonCancelIntent = function(dataStore) {
     return new Promise((resolve, reject) => {
         var responseBuilder = new ResponseBuilder();
         dataStore.response = responseBuilder.addSpeech({
